@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Red Motorsportz - Motorsport Photography</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(200, 0, 0, 0.7);
+            padding: 20px;
+            color: white;
+        }
+        .gallery-img {
+            filter: grayscale(75%);
+            transition: 0.3s;
+        }
+        .gallery-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-red w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()">?</a>
+        <a href="#home" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#gallery" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GALLERY</a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<header id="home" class="w3-display-container" style="max-height: 90vh;">
+    <img class="w3-image" src="https://source.unsplash.com/1600x900/?racecar" alt="Hero Image">
+    <div class="hero-overlay w3-round">
+        <h1 class="w3-xxxlarge">RED MOTORSPORTZ</h1>
+        <h2>Capturing the Soul of Speed</h2>
+    </div>
+</header>
+
+<!-- Gallery Section -->
+<div id="gallery" class="w3-container w3-padding-64">
+    <h3 class="w3-border-bottom w3-border-red w3-padding-16">FEATURED SHOTS</h3>
+    
+    <div class="w3-row-padding">
+        <!-- Photo 1 -->
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card-4">
+                <img src="https://source.unsplash.com/800x600/?motorsport" 
+                     class="gallery-img" 
+                     onclick="openModal('https://source.unsplash.com/800x600/?motorsport')"
+                     style="width:100%; cursor: pointer">
+                <div class="w3-container w3-light-grey">
+                    <p class="w3-opacity">Formula 1 - Monaco GP</p>
+                    <p>High-speed cornering at Mirabeau</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Photo 2 -->
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card-4">
+                <img src="https://source.unsplash.com/800x600/?racing" 
+                     class="gallery-img" 
+                     onclick="openModal('https://source.unsplash.com/800x600/?racing')"
+                     style="width:100%; cursor: pointer">
+                <div class="w3-container w3-light-grey">
+                    <p class="w3-opacity">24h Le Mans</p>
+                    <p>Night action at Mulsanne Straight</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more photos following the same structure -->
+    </div>
+</div>
+
+<!-- About Section -->
+<div id="about" class="w3-container w3-padding-64 w3-red">
+    <h3 class="w3-border-bottom w3-border-white w3-padding-16">ABOUT ME</h3>
+    <div class="w3-row-padding">
+        <div class="w3-col m6">
+            <img src="https://source.unsplash.com/600x400/?photographer" class="w3-image w3-round" alt="Bio">
+        </div>
+        <div class="w3-col m6">
+            <h4>Through the Lens of Passion</h4>
+            <p>Specializing in high-octane motorsport photography since 2015. With over 200 races covered across 15 countries, I bring you the most intense moments from tracks around the world.</p>
+            <p>Equipment: Canon EOS R3 | DJI Air 3 | Premium Lenses Collection</p>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact" class="w3-container w3-padding-64">
+    <h3 class="w3-border-bottom w3-border-red w3-padding-16">GET IN TOUCH</h3>
+    <div class="w3-row-padding">
+        <div class="w3-half">
+            <p><i class="fa fa-map-marker w3-text-red"></i> Milan, IT</p>
+            <p><i class="fa fa-envelope w3-text-red"></i> contact@redmotorsportz.com</p>
+        </div>
+        <div class="w3-half">
+            <form>
+                <div class="w3-section">
+                    <input class="w3-input" type="text" placeholder="Name" required>
+                </div>
+                <div class="w3-section">
+                    <input class="w3-input" type="email" placeholder="Email" required>
+                </div>
+                <div class="w3-section">
+                    <textarea class="w3-input" placeholder="Project Details" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="w3-button w3-red w3-block">SEND INQUIRY</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div id="modal" class="w3-modal" onclick="this.style.display='none'">
+    <span class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
+    <div class="w3-modal-content w3-animate-zoom">
+        <img id="modal-img" style="width:100%">
+        <div class="w3-container w3-red">
+            <p id="modal-caption" class="w3-center"></p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-red w3-center w3-padding-32">
+    <div class="w3-xlarge w3-section">
+        <a href="https://github.com/yourusername" class="w3-hover-opacity"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/yourprofile" class="w3-hover-opacity"><i class="fab fa-instagram"></i></a>
+        <a href="https://500px.com/yourprofile" class="w3-hover-opacity"><i class="fab fa-500px"></i></a>
+    </div>
+    <p>© 2024 Red Motorsportz | Fueled by Passion</p>
+</footer>
+
+<script>
+// Modal functions
+function openModal(imgSrc) {
+    document.getElementById('modal-img').src = imgSrc;
+    document.getElementById('modal').style.display = 'block';
+}
+
+// Mobile menu toggle
+function toggleNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Close modal on ESC key
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        document.getElementById('modal').style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
